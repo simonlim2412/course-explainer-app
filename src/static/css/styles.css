@@ -66,3 +66,111 @@ h1 {
     bottom: 0;
     width: 100%;
 }
+
+/* Modal styling */
+.course-modal {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.course-modal[open] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.course-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.course-modal[open]::backdrop {
+    opacity: 1;
+}
+
+.modal-content {
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+.modal-title {
+    margin-top: 0;
+    color: #2a6fb6;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.modal-instructor {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+}
+
+.modal-duration {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.modal-topics {
+    margin-top: 15px;
+}
+
+.modal-topics ul {
+    margin-top: 5px;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.modal-topics li {
+    margin-bottom: 5px;
+    color: #444;
+    position: relative;
+    padding-left: 15px;
+}
+
+.modal-topics li::before {
+    content: "•";
+    color: #2a6fb6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.close-btn {
+    background-color: #35424a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 25px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    width: 100%;
+}
+
+.close-btn:hover {
+    background-color: #242d33;
+    transform: scale(1.02);
+}
+
+.close-btn:active {
+    transform: scale(0.98);
+}

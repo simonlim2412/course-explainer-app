@@ -2,7 +2,7 @@ from flask import render_template
 from models import courses
 
 def index():
-    return render_template('index.html')
+    return render_template('index.html', courses=courses)
 
 def course(course_id):
     # Convert course_id to int and handle 1-based indexing for simplicity in this example
